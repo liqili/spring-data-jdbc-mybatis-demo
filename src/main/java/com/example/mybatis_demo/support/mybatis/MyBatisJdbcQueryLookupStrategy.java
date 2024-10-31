@@ -18,7 +18,7 @@ import java.lang.reflect.Method;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.example.mybatis_demo.support.mybatis.annotation.MyBatisMapper;
+import com.example.mybatis_demo.support.mybatis.annotation.MyBatisQuery;
 import com.example.mybatis_demo.support.mybatis.query.MyBatisQueryMethod;
 import com.example.mybatis_demo.support.mybatis.query.MyBatisRepositoryQuery;
 import org.apache.commons.logging.Log;
@@ -262,7 +262,7 @@ abstract class MyBatisJdbcQueryLookupStrategy implements QueryLookupStrategy {
                                             ProjectionFactory projectionFactory, NamedQueries namedQueries) {
 
             try {
-                if(method.getDeclaringClass().isAnnotationPresent(MyBatisMapper.class)){
+                if(method.isAnnotationPresent(MyBatisQuery.class)){
                     return myBatisQueryStrategy.resolveQuery(method, repositoryMetadata, projectionFactory, namedQueries);
                 }
                 return lookupStrategy.resolveQuery(method, repositoryMetadata, projectionFactory, namedQueries);

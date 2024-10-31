@@ -1,10 +1,17 @@
 package com.example.mybatis_demo.entity;
 
+import org.springframework.data.annotation.Id;
+
 /**
  * Created by kunkka on 31/10/24
  */
 
 public class User {
+    @Id
+    private Long id;
+    private String name;
+    private String email;
+
     public Long getId() {
         return id;
     }
@@ -28,8 +35,4 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    private Long id;
-    private String name;
-    private String email;
 }
