@@ -6,7 +6,7 @@ This project demonstrates how to integrate **Spring Data JDBC** and **MyBatis** 
 
 This sample achieves the goal to do Spring data JDBC query along with Mybatis query in one repository:
 - **Spring Data JDBC** for simple CRUD operations with repository management.
-- **MyBatis** for handling complex SQL queries that exceed Spring Data JDBC’s capabilities.
+- **MyBatis** for handling complex SQL queries that exceed Spring Data JDBC’s capabilities. Just put the annotation @MyBatisQuery on top of the method for MyBatis query.
 - Combining annotations and XML-based queries in the same project for flexibility.
 
 ## Features
