@@ -12,7 +12,7 @@ import java.util.List;
 
 @MyBatisMapper
 public interface UserMapper {
-    @Select("SELECT * FROM `user`")
+//    @Select("SELECT * FROM `user`")
     List<User> findAllUsers();
 
     @Insert("INSERT INTO `user`(name, email) VALUES(#{name}, #{email})")
