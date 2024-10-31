@@ -5,11 +5,12 @@ package com.example.mybatis_demo.mapper;
  */
 
 import com.example.mybatis_demo.entity.User;
+import com.example.mybatis_demo.support.mybatis.annotation.MyBatisMapper;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
-@Mapper
+@MyBatisMapper
 public interface UserMapper {
     @Select("SELECT * FROM users")
     List<User> findAll();
