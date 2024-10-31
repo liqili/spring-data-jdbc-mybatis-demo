@@ -14,21 +14,21 @@ import java.util.List;
 @Service
 @Table(name = "users")
 public class UserService {
-    private final UserRepository userMapper;
+    private final UserRepository userRepository;
 
-    public UserService(UserRepository userMapper) {
-        this.userMapper = userMapper;
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
-    public List<User> findAll() {
-        return userMapper.findAll();
+    public List<User> findAllUsers() {
+        return userRepository.findAllUsers();
     }
 
-    public User findById(Long id) {
-        return userMapper.findById(id);
+    public User findByUserId(Long id) {
+        return userRepository.findByUserId(id);
     }
 
     public void save(User user) {
-        userMapper.insert(user);
+        userRepository.insert(user);
     }
 }

@@ -12,14 +12,14 @@ import java.util.List;
 
 @MyBatisMapper
 public interface UserMapper {
-    @Select("SELECT * FROM users")
-    List<User> findAll();
+    @Select("SELECT * FROM `user`")
+    List<User> findAllUsers();
 
-    @Insert("INSERT INTO users(name, email) VALUES(#{name}, #{email})")
+    @Insert("INSERT INTO `user`(name, email) VALUES(#{name}, #{email})")
     @Options(useGeneratedKeys = true, keyProperty = "id")
     void insert(User user);
 
-    @Select("SELECT * FROM users WHERE id = #{id}")
-    User findById(Long id);
+    @Select("SELECT * FROM `user` WHERE id = #{id}")
+    User findByUserId(Long id);
 }
 

@@ -20,12 +20,12 @@ public class UserController {
 
     @GetMapping
     public List<User> getAllUsers() {
-        return userService.findAll();
+        return userService.findAllUsers();
     }
 
     @GetMapping("/{id}")
     public User getUserById(@PathVariable Long id) {
-        return userService.findById(id);
+        return userService.findByUserId(id);
     }
 
     @PostMapping
